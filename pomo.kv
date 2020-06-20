@@ -8,33 +8,126 @@
         Rectangle:
             size: self.size
             pos: self.pos
+            source: 'asfalt-dark.png'
+
+
 
 
 <ColoredLabel@Label+BackgroundColor>
     background_color: 0, 0, 1, 1
+    font_name: 'Roboto-Bold'
 
-
-
-BoxLayout:
-    orientation: 'vertical'
-    Label:
-        height: 4
-        id: top_buffer
-        size_hint_y: None
+<TasksScreen>:
     BoxLayout:
-        orientation: 'horizontal'
+        orientation: 'vertical'
         Label:
-            width: 4
-            id: left_buffer
-            size_hint_x: None
+            height: 4
+            id: top_buffer
+            size_hint_y: None
+        BoxLayout:
+            orientation: 'horizontal'
+            Label:
+                width: 4
+                id: left_buffer
+                size_hint_x: None
+            ColoredLabel:
+                id: center_text
+                text: 'Hello world, this is the Tasks Screen.'
+            Button:
+                text: '[b]Timer[/b]'
+                markup: True
+                on_press:
+                    root.manager.current = 'main'
+                    root.manager.transition.direction = 'left'
+                width: 60
+                size_hint_x: None
+            Label:
+                width: 4
+                id: right_buffer
+                size_hint_x: None
+        Label:
+            height: 3
+            id: bottom_buffer
+            size_hint_y: None
+
+<MainTimerDisplay>:
+    BoxLayout:
+        orientation: 'vertical'
         ColoredLabel:
-            id: center_text
-            text: 'Hello world, this is PoMo'
+            height: 3
+            id: timer_top_buffer
+            size_hint_y: None
+            background_color: 0, 1, 0, .8
+        BoxLayout:
+            orientation: 'horizontal'
+            ColoredLabel:
+                width: 3
+                id: timer_left_buffer
+                size_hint_x: None
+                background_color: 0, 1, 0, .8
+            GridLayout:
+                orientation: 'vertical'
+                rows: 3
+                ColoredLabel:
+                    id: task_namespace
+                    text: 'Task Name'
+                ColoredLabel:
+                    id: main_timer
+                    text: 'The PoMo Timer'
+                    font_size: 34
+                    background_color: 0, 0, 1, .6
+                ColoredLabel:
+                    id: below_timer
+                    text: 'Priority'
+            ColoredLabel:
+                width: 3
+                id: timer_right_buffer
+                size_hint_x: None
+                background_color: 0, 1, 0, .8
+        ColoredLabel:
+            height: 3
+            id: timer_bottom_buffer
+            size_hint_y: None
+            background_color: 0, 1, 0, .8
+
+
+<MainScreen>:
+    BoxLayout:
+        orientation: 'vertical'
         Label:
-            width: 4
-            id: right_buffer
-            size_hint_x: None
-    Label:
-        height: 3
-        id: bottom_buffer
-        size_hint_y: None
+            height: 4
+            id: top_buffer
+            size_hint_y: None
+        BoxLayout:
+            orientation: 'horizontal'
+            Label:
+                width: 4
+                id: left_buffer
+                size_hint_x: None
+            Button:
+                text: '[b]Tasks[/b]'
+                width: 60
+                markup: True
+                on_press:
+                    root.manager.transition.direction = 'right'
+                    root.manager.current = 'tasks'
+                size_hint_x: None
+
+            # Main Timer Display
+            MainTimerDisplay:
+
+            Label:
+                width: 4
+                id: right_buffer
+                size_hint_x: None
+        Label:
+            height: 3
+            id: bottom_buffer
+            size_hint_y: None
+
+
+ScreenManager:
+    MainScreen:
+        name: 'main'
+    TasksScreen
+        name: 'tasks'

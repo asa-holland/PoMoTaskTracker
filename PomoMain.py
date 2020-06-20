@@ -10,11 +10,26 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.uix.widget import Widget
 from kivy.core.window import Window
+from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.config import Config
+
+Config.set('graphics', 'resizable', False)
+
+
+class MainScreen(Screen):
+    pass
+
+
+class TasksScreen(Screen):
+    pass
+
+
+class MainTimerDisplay(Screen):
+    pass
 
 
 class PoMoApp(App): # <- Main Class
     pass
-
 
 if __name__ == "__main__":
     # set window size (width, height)
