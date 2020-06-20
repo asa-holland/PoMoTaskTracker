@@ -57,17 +57,17 @@
             height: 3
             id: timer_top_buffer
             size_hint_y: None
-            background_color: 0, 1, 0, .8
+            background_color: 0, 0, 1, .8
         BoxLayout:
             orientation: 'horizontal'
             ColoredLabel:
                 width: 3
                 id: timer_left_buffer
                 size_hint_x: None
-                background_color: 0, 1, 0, .8
+                background_color: 0, 0, 1, .8
             GridLayout:
                 orientation: 'vertical'
-                rows: 3
+                rows: 4
                 ColoredLabel:
                     id: task_namespace
                     text: 'Task Name'
@@ -79,16 +79,27 @@
                 ColoredLabel:
                     id: below_timer
                     text: 'Priority'
+                BoxLayout:
+                    orientation: 'horizontal'
+                    ColoredLabel
+                    Button:
+                        text: 'Pause'
+                        font_size: 12
+                    ColoredLabel
+                    Button:
+                        text: 'Resume'
+                        font_size: 12
+                    ColoredLabel
             ColoredLabel:
                 width: 3
                 id: timer_right_buffer
                 size_hint_x: None
-                background_color: 0, 1, 0, .8
+                background_color: 0, 0, 1, .8
         ColoredLabel:
             height: 3
             id: timer_bottom_buffer
             size_hint_y: None
-            background_color: 0, 1, 0, .8
+            background_color: 0, 0, 1, .8
 
 
 <MainScreen>:

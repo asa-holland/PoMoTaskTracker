@@ -13,7 +13,7 @@ from kivy.core.window import Window
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.config import Config
 
-Config.set('graphics', 'resizable', False)
+kivy.config.Config.set('graphics', 'resizable', 0)
 
 
 class MainScreen(Screen):
@@ -33,6 +33,7 @@ class PoMoApp(App): # <- Main Class
 
 if __name__ == "__main__":
     # set window size (width, height)
+
     Window.size = (600, 150)
     pomo = PoMoApp()
     pomo.run()
