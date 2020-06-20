@@ -1,4 +1,4 @@
-# PoMo, your Personal CS Assistant
+# PoMo, your Personal Task Tracker
 
 Meet PoMo! PoMo is a simple desktop app that helps you with task and time management.
 
