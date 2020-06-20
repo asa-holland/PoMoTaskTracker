@@ -1,6 +1,6 @@
-# cs-assistant
+# Pomo, your Personal CS Assistant
 
-Welcome to Pomo! Pomo is a simple desktop app that helps you with task and time management.
+Meet Pomo! Pomo is a simple desktop app that helps you with task and time management.
 
 Basic functions of Pomo:
 Add tasks and set task priority (low, mid, high), status (not started, in progress, completed), and expected duration.
@@ -13,4 +13,3 @@ This adds time to the time elapsed on that task while decreasing the current tim
 When the timer value becomes zero, Pomo prompts the user to switch tasks or take a break.
 
 Breaks (pausing and resuming without changes to the current timer) occur at set times based on the length of the time of all the tasks in the current list.
-
