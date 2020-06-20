@@ -9,10 +9,15 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
 from kivy.uix.button import Button
 from kivy.uix.widget import Widget
+from kivy.core.window import Window
+
 
 class PoMoApp(App): # <- Main Class
     pass
 
+
 if __name__ == "__main__":
-    pomo = PomoApp()
+    # set window size (width, height)
+    Window.size = (600, 150)
+    pomo = PoMoApp()
     pomo.run()

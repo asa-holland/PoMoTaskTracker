@@ -1,11 +1,40 @@
 #:kivy 1.0
 
+<BackgroundColor@Widget>
+    background_color: 1, 1, 1, 1
+    canvas.before:
+        Color:
+            rgba: root.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+
+<ColoredLabel@Label+BackgroundColor>
+    background_color: 0, 0, 1, 1
+
+
+
 BoxLayout:
     orientation: 'vertical'
     Label:
-        text: 'buffer'
-
+        height: 4
+        id: top_buffer
+        size_hint_y: None
     BoxLayout:
         orientation: 'horizontal'
+        Label:
+            width: 4
+            id: left_buffer
+            size_hint_x: None
+        ColoredLabel:
+            id: center_text
+            text: 'Hello world, this is PoMo'
+        Label:
+            width: 4
+            id: right_buffer
+            size_hint_x: None
     Label:
-        text: 'Hello world, this is PoMo'
+        height: 3
+        id: bottom_buffer
+        size_hint_y: None
