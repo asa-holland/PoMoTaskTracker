@@ -66,14 +66,13 @@
                 size_hint_x: None
                 background_color: 0, 0, 1, .8
             GridLayout:
-                orientation: 'vertical'
                 rows: 4
                 ColoredLabel:
                     id: task_namespace
                     text: 'Task Name'
                 ColoredLabel:
                     id: main_timer
-                    text: 'The PoMo Timer'
+                    text: str(root.get_formatted_time(raw_seconds=round(root.current_time)))
                     font_size: 34
                     background_color: 0, 0, 1, .6
                 ColoredLabel:
@@ -83,12 +82,19 @@
                     orientation: 'horizontal'
                     ColoredLabel
                     Button:
-                        text: 'Pause'
+                        text: 'Start'
                         font_size: 12
+                        on_press: root.start()
                     ColoredLabel
                     Button:
-                        text: 'Resume'
+                        text: 'Stop'
                         font_size: 12
+                        on_press: root.stop()
+                    ColoredLabel
+                    Button:
+                        text: 'Reset'
+                        font_size: 12
+                        on_press: root.current_time = 0
                     ColoredLabel
             ColoredLabel:
                 width: 3
